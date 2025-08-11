@@ -8,6 +8,6 @@ FROM openjdk:25-ea-17-jdk AS run
 RUN adduser -D -h /usr/share/demo -s /bin/bash testuser
 USER testuser
 WORKDIR /usr/share/demo
-COPY --from=build/spring-petclinic/target/*.jar name.jar
+COPY --from=build /spring-petclinic/target/*.jar name.jar
 EXPOSE 8080/tcp
-CMD ["java","-jar", "*.jar"]
+CMD ["java","-jar", "name.jar"]
