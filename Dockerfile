@@ -4,7 +4,7 @@ RUN git clone https://github.com/pendempadma18/spring-petclinic.git && \
     cd spring-petclinic && \
     mvn package
 
-FROM openjdk:25-ea-17-jdk AS run
+FROM amazoncorretto:17 AS run
 RUN adduser -m -d /usr/share/demo -s /bin/bash testuser
 USER testuser
 WORKDIR /usr/share/demo
