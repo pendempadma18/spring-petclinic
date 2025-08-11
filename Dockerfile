@@ -1,4 +1,4 @@
-FROM maven:3.9.11-eclipse-temurin-17-alpine as build
+FROM maven:3.9.11-eclipse-temurin-17 AS build
 RUN apt install git
 RUN git clone https://github.com/pendempadma18/spring-petclinic.git && \
     cd spring-petclinic && \
